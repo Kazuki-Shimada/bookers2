@@ -21,17 +21,17 @@
           <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             <li class="nav-item mx-5">
-              <%= link_to home_path, class: 'nav-link text-light' do %>
+              <%= link_to user_path(current_user), class: 'nav-link text-light' do %>
                 <i class="fas fa-home"></i> Home
               <% end %>
             </li>
             <li class="nav-item mx-5">
-              <%= link_to home_path, class: 'nav-link text-light' do %>
+              <%= link_to users_path, class: 'nav-link text-light' do %>
                 <i class="fas fa-users"></i> Users
               <% end %>
             </li>
             <li class="nav-item mx-5">
-              <%= link_to home_path, class: 'nav-link text-light' do %>
+              <%= link_to books_path, class: 'nav-link text-light' do %>
                 <i class="fas fa-book-open"></i> Books
               <% end %>
             </li>

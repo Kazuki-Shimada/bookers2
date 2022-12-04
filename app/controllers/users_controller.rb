@@ -7,4 +7,10 @@ class UsersController < ApplicationController
     @book = Book.new
     @books = @user.books
   end
+  def index
+    @user = current_user
+    @users = User.all
+    @book = Book.new
+    @books = @user.books
+  end
 end

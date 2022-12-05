@@ -6,9 +6,33 @@
     </div>
     <div class="col-md-8 offset-md-1">
       <h1>Book detail<h1>
-        <%= link_to user_path(user.id) do %>
-            <%= @book.user.name %>
-        <% end %>
+        <table class="table">
+          <tr>
+            <th>
+              <%= image_tag @users.get_profile_image(100, 100) %><br />
+              <%= link_to user_path(@users) do %>
+                <p class="fs-6"><%= @books.user.name %></p>
+              <% end %>
+            </th>
+            <td>
+              <%= link_to book_path(@books) do %>
+                <%= @books.title %>
+              <% end %>
+            </td>
+            <td>
+              <%= @books.body %>
+            </td>
+            <% if @books.user == current_user %>
+            <td>
+              <%= link_to "Edit", edit_book_path(@books), class: "btn btn-success" %>
+            </td>
+            <td>
+              <%= link_to "Destroy", books_path(@books), class: "btn btn-danger", method: :delete %>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+
         <p><%= @book.title %></p>
         <p><%= @book.body %></p>
         <% if @book.user == current_user %>

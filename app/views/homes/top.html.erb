@@ -1,8 +1,13 @@
 <div class="mx-auto w-50">
+    <p class="notice"><%= notice %></p>
     <h1>Welcome to <i class="fas fa-book"></i><strong>Bookers</strong>!!</h1>
     <p>In <i class="fas fa-book"></i><strong>Bookers</strong>,</p>
     <p>you can share and exchange your opinions, inpressions, and emotions</p>
     <p>about various books!</p>
-    <a class="btn btn-info w-100 my-3" href="/users/sign_in">Log in</a>
-    <a class="btn btn-success w-100 text-light" href="/users/sign_up">Sign up</a>
+    <%= link_to new_user_registration_path, class: "btn btn-info w-100 my-3" do %>
+    Log in
+    <% end %>
+    <%= link_to new_user_session_path, class: "btn btn-success w-100 text-light" do %>
+    Sign up
+    <% end %>
 </div>

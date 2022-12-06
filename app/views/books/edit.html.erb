@@ -1,5 +1,23 @@
 <div class="container px-5 px-sm-0">
   <h1>Editing Book</h1>
-  <p>Title</p>
-  <p>Opinion</p>
+  <% if @book.errors.any? %>
+    <strong><%= @book.errors.count %>errors prohibited this obj from being saved:</strong>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div class="input-group">
+    <%= form_with model: @book, method: :patch do |f| %>
+    <p>Title</p>
+    <%= f.text_field :title, class: "form-control" %>
+    <p>Opinion</p>
+    <%= f.text_area :body, class: "form-control" %><br />
+    <%= f.submit "Update Book", class: "btn btn-success" %>
+    <br />
+    <%= link_to "Show", book_path(@book.id) %>|
+    <%= link_to "Back", books_path %>
+    <% end %>
+  </div>
 </div>

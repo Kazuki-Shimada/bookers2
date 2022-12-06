@@ -7,11 +7,9 @@
     </tr>
     <tr>
         <th>introduction</th>
-        <td></td>
+        <td><%= user.introduction %></td>
     </tr>
 </table>
-<p class="btn btn-outline-secondary w-100 my-3">
-    <%= link_to edit_user_path(user.id) do %>
-        <i class="fas fa-user-cog"></i>
-    <% end %>
-</p>
+<%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary w-100 my-3" do %>
+    <i class="fas fa-user-cog"></i>
+<% end %>
